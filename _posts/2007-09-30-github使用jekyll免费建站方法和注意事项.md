@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Sublime初用
-tags: sublime text 2,sublime,packages
+title: github使用jekyll免费建站方法和注意事项
+tags: github pages,jekyll,problem
 ---
 
 {{ page.title }}
