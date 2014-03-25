@@ -6,22 +6,35 @@ tags: github pages,jekyll,problem
 
 {{ page.title }}
 ================
-$ git config --gobal core.autocrlf false
-$ git push origin gh-pages -f
-这几天看文章，很多提到了OS X下的[TextMate]，可是从评论中看来，一个叫[Sublime]的编辑器更让我感兴趣。尤其是看到有些[EditPlus]的用户也转向Sublime，EditPlus是我最喜欢的Windows下的编辑器，小巧，精练，自我感觉可以稍鄙视UltraEdit、EmEditor、NotePad++。
 
-由于近些天完全转向了Linux桌面，精确说是Ubuntu12.04（基本确定以后会换掉这个让我感到太多意外的发行版），Gedit启动慢，Vim还没熟练/老婆不会用，Sublime算是个希望。（也算是，如果它把致命的输入法bug修好的话）
+github Pages可以被认为是用户编写的、托管在github上的静态网页.
+Jekyll是一个静态站点生成器，它会根据网页源码生成静态文件。它提供了模板、变量、插件等功能，所以实际上可以用来编写整个网站.
+我们可以在本地编写符合Jekyll规范的网站源码，生成站点，发布到github上面，这样我们就有了一个免费的，无限流量的，有人维护的属于我们的自己的web网站。
+jekyll目录结构
+--------------
 
-[<img width="688px" src="/images/2012-08-20-sublime-text-2.png" alt="sublime text 2"/>][pic.sublime-text-2]
+源代码目录：
 
-#### Sublime对于我来说的优点：
+	aptitude install libtool // Apache
+	aptitude install libxml2-dev
+	aptitude install libmcrypt-dev // PHP
+	aptitude install libc6-dev gcc g++ make
+	...
+	|-- _config.yml
+	|-- _includes
+	|-- _layouts
+	|   |-- default.html
+	|   |-- post.html
+	|-- _posts
+	|   |-- 20011-10-25-open-source-is-good.html
+	|   |-- 20011-04-26-hello-world.html
+	|-- _site
+	|-- index.html
+	|-- assets
+	   |-- css
+	       |-- style.css
+	   |-- javascripts
 
-0.	跨平台，Windows、OS X、Linux
-1.	启动快，不知道加上很多插件后会。。怎样
-2.	界面好看
-3.	好多很棒的功能，比Editplus的功能貌似多很多
-4.	扩展性很强，所以插件多多，Sublime嵌着一个Python解释器
-5.	共享软件，如果需要可以购买
 
 #### 一些网址：
 
