@@ -58,14 +58,14 @@ jekyll目录结构
 
 目录结构详解
 
-<table>
+<table border="1px">
 	<tr>
-		<th>"文件 / 目录"</th>
-		<th>"描述"</th>
+		<th>文件 / 目录</th>
+		<th>描述</th>
 	</tr>
 	<tr>
-		<td>"Other Files/Folders"</td>
-		<td>"其他一些未被提及的目录和文件如  css 还有 images 文件夹， favicon.ico 等文件都将被完全拷贝到生成的 site 中。"</td>
+		<td>Other Files/Folders</td>
+		<td>其他一些未被提及的目录和文件如  css 还有 images 文件夹， favicon.ico 等文件都将被完全拷贝到生成的 site 中。</td>
 	</tr>
 </table>
 
