@@ -7,6 +7,9 @@ tags: github pages,jekyll,problem
 {{ page.title }}
 ================
 
+技术简介
+--------
+
 github Pages可以被认为是用户编写的、托管在github上的静态网页.
 
 Jekyll是一个静态站点生成器，它会根据网页源码生成静态文件。它提供了模板、变量、插件等功能，所以实际上可以用来编写整个网站.
@@ -53,6 +56,16 @@ jekyll目录结构
 	       |-- style.css
 	   |-- javascripts
 
+<table border="1">
+<tr>
+<td>row 1, cell 1</td>
+<td>row 1, cell 2</td>
+</tr>
+<tr>
+<td>row 2, cell 1</td>
+<td>row 2, cell 2</td>
+</tr>
+</table>
 
 #### 一些网址：
 	
