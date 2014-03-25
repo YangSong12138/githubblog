@@ -58,7 +58,7 @@ jekyll目录结构
 
 目录结构详解
 
-<table border="1px">
+<table style="border:#000000 solid;border-width:1 0 0 1">
 	<tr>
 		<th>文件 / 目录</th>
 		<th>描述</th>
