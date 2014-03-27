@@ -17,43 +17,98 @@ JavaScript编程与DOM编程
 3. 服务器端内置宿主对象；
 4. 浏览器扩展宿主对象；
 
-    首先要理解宿主对象这个概念，有上面可以看出，JavaScript对于不同的运行环境有着不同的内置宿主对象。总的来说导致这个情况的原因是JavaScript是被用来作为一种扩展语言。这里需要理解的是一方面JavaScript作为通用语言，开发者必须拥有运行时的上下文环境；另一方面作为扩展语言需要在内建对象的应用程序（宿主环境）中运行，宿主环境提供上下文信息，JavaScript会以全局对象（window对象）作为根节点的对象树形式接受这些信息，这个对象树就是宿主对象。
+首先要理解宿主对象这个概念，有上面可以看出，JavaScript对于不同的运行环境有着不同的内置宿主对象。总的来说导致这个情况的原因是JavaScript是被用来作为一种扩展语言。这里需要理解的是一方面JavaScript作为通用语言，开发者必须拥有运行时的上下文环境；另一方面作为扩展语言需要在内建对象的应用程序（宿主环境）中运行，宿主环境提供上下文信息，JavaScript会以全局对象（window对象）作为根节点的对象树形式接受这些信息，这个对象树就是宿主对象。
 
-    DOM编程是浏览器与用户之间的接口，反馈浏览器与用户的交互操作。由于我们大部分对使用JavaScript进行客户端开发，所以我们感觉到这个两种编程是一起的，其实他们拥有相互独立的语言标准。JavaScript为客户端提供对象树的方法有很多，其中DOM就是其中一宿主对象，由此可以看出他就像一个外部库，可以替换，非核心语言。DOM能够很好的将HTML文档以对象树的形式使用所以被JavaScript所引用。
+DOM编程是浏览器与用户之间的接口，反馈浏览器与用户的交互操作。由于我们大部分对使用JavaScript进行客户端开发，所以我们感觉到这个两种编程是一起的，其实他们拥有相互独立的语言标准。JavaScript为客户端提供对象树的方法有很多，其中DOM就是其中一宿主对象，由此可以看出他就像一个外部库，可以替换，非核心语言。DOM能够很好的将HTML文档以对象树的形式使用所以被JavaScript所引用。
 
 DOM基础
 -------
 
-源代码目录：
+下面为DOM基础操作的讲解和源代码。
+
+源代码：
 
 	...
-	|-- _config.yml
-	|-- _includes
-	|-- _layouts
-	|   |-- default.html
-	|   |-- post.html
-	|-- _posts
-	|   |-- 20011-10-25-open-source-is-good.html
-	|   |-- 20011-04-26-hello-world.html
-	|-- _site
-	|-- index.html
-	|-- assets
-	   |-- css
-	       |-- style.css
-	   |-- javascripts
+	<div id="foo">
+	<span>a</span>
+	<span>b</span>
+	<span>c</span>
+	<span id='lastspan'>d</span>
+	<div id="myid">
+		<div id="aa">
+			<div id="aaa"></div>
+		</div>
+		<div id="bb"></div>
+	</dvi>
+	<div class="xixi haha">
+		e
+	</div>
+	</div>
+	<p id="bar">
+		<span>x</span>
+	</p>
 
-目录结构详解
+	<script>
+		//document是window全局对象的属性，对其属性访问可以省略'window.'
+		var foo=document.getElementById("foo");
+		alert(foo);//object
+		var foospan=foo.getElementsByTagName("span");
+		var allspan=document.getElementsByTagName("span");
+		alert(foospan.length+allspan.length);//9
+		//live 对象
+		var newSpan=document.createElement('span');
+		newSpan.appendChild(document.createTextNode("f"));
+		foo.appendChild(newSpan);
+		alert(foospan.length);//5
+		//array&&nodelist
+		var nodelist=document.getElementsByTagName("span");
+		var array=Array.prototype.slice.call(nodelist);//性能更好
+		alert(array instanceof Array);//true
+		//类名
+		var classdiv1=foo.getElementsByClassName("xixi");
+		var classdiv2=foo.getElementsByClassName("haha");
+		var classdiv3=foo.getElementsByClassName("xixi haha");
+		//引用相关元素属性(父、子、兄)
+		var my=document.getElementById("myid");
+		var elem;
+		elem=my.parentNode;
+		elem=my.firstElementChild;
+		elem=my.lastElementChild;
+		var children=my.children;
+		alert(children[0].id);
+		elem=my.previousElementSibling;
+		alert(elem.id);
+		elem=my.nextElementSibling;
+		elem=elem.nextElementSibling;
+		//create modify delete node
+		var newSpan=document.createElement('span');
+		newSpan.appendChild(document.createTextNode("f"));
+		foo.appendChild(newSpan);
+		var newcomment=document.createComment("this is a comment!");
+		foo.insertBefore(newcomment,my);
+		var replaceparent=newcomment.parentNode;
+		var replacecomment=document.createComment("this is another comment!");
+		replaceparent.replaceChild(replacecomment,newcomment);
+		replacecomment.parentNode.removeChild(replacecomment);
+		//innerHTML
+		var barelem=document.getElementById("bar");
+		barelem.innerHTML="<div>xixi</div>"
+		barelem.textContent="<div>xixi</div>";//Level 3 core
+		//DocumentFragment 提高操作性能,每次操作是内容发生变化，浏览器要重新绘制画面。使用它可以预处理，减少绘画次数。
+		var fragment=document.createDocumentFragment();
+		var fragmentSpan=document.createElement('span');
+		fragmentSpan.appendChild(document.createTextNode("t"));
+		fragment.appendChild(fragmentSpan);
+		var fragmentSpan1=document.createElement('span');//需要新的对象，同意对象不会再次插入
+		fragmentSpan.appendChild(document.createTextNode("t"));
+		fragment.appendChild(fragmentSpan1);
+		//fragmentSpan.innerHTML("xixi");//这种做法是错误的
+		fragment.appendChild(fragmentSpan);
+		foo.appendChild(fragment);
 
-<table style="border:#000000 solid;border-width:2 0 0 2">
-	<tr>
-		<th>文件 / 目录</th>
-		<th>描述</th>
-	</tr>
-	<tr>
-		<td style="border:#000000 solid;border-width:1 0 0 1">Other Files/Folders</td>
-		<td style="border:#000000 solid;border-width:1 0 0 1">其他一些未被提及的目录和文件如  css 还有 images 文件夹， favicon.ico 等文件都将被完全拷贝到生成的 site 中。</td>
-	</tr>
-</table>
+	</script>
+
+
 
 #### 一些网址：
 	
