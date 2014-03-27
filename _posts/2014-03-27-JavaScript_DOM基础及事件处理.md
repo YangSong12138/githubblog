@@ -28,21 +28,18 @@ DOM基础
 
 源代码：
 
-	...
 	<div id="foo">
 	<span>a</span>
-	<span>b</span>
-	<span>c</span>
-	<span id='lastspan'>d</span>
-	<div id="myid">
-		<div id="aa">
-			<div id="aaa"></div>
-		</div>
-		<div id="bb"></div>
-	</dvi>
-	<div class="xixi haha">
-		e
-	</div>
+		<span>b</span>
+		<span>c</span>
+		<span id='lastspan'>d</span>
+		<div id="myid">
+			<div id="aa">
+				<div id="aaa"></div>
+			</div>
+			<div id="bb"></div>
+		</dvi>
+		<div class="xixi haha">e</div>
 	</div>
 	<p id="bar">
 		<span>x</span>
@@ -107,6 +104,9 @@ DOM基础
 		fragment.appendChild(fragmentSpan);
 		foo.appendChild(fragment);
 	</script>
+
+事件
+----
 
 
 
