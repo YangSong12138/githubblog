@@ -108,16 +108,52 @@ DOM基础
 事件
 ----
 
+事件处理的方式包括事件处理程序和事件监听器，区别在于对于一个元素或事件只能设定一个事件处理程序，但可以设定多个事件监听器。
 
+指定为HTML的属性（事件处理程序）
 
-#### 一些网址：
-	
-1.	阮一峰的网络日志"搭建一个免费的，无限流量的Blog"：<http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html>
-2.	jekyll模版：<https://github.com/jekyll/jekyll/wiki/Sites>
-3.	Jekyll插件：<https://github.com/dnfehren/SublimeJekyll>
-4.	Git插件：<https://github.com/kemayo/sublime-text-2-git>
-5.  Jekyll官网：<http://jekyllcn.com/docs/home/>
-6.	很好用的编辑器“Sublime官网”：<http://www.sublimetext.com/>
+	<a id='foo' href="http://www.baidu.com" onclick="return stop()">HTML属性</a>
+
+指定为DOM元素的属性（事件处理程序）
+
+	<script>
+		var btn=document.getElementById("foo");
+		function sayFoo(){
+			alert("DOM属性");
+		}
+		btn.onclick=sayFoo;
+	</script>
+
+通过EventTarget.addEventListener()进行制定（时间监听）
+
+	<script>
+		var btn=document.getElementById("foo");
+		function sayFoo1(){
+			alert("DOM属性");
+		}
+		function sayFoo2(){
+			alert("DOM属性");
+		}
+		function sayFoo3(){
+			alert("DOM属性");
+		}
+		btn.addEventListener('click',sayFoo1,false);
+		btn.addEventListener('click',sayFoo2,false);
+		btn.addEventListener('click',sayFoo3,false);
+		btn.addEventListener('click',sayFoo1,false);
+	</script>
+
+	//时间监听对象
+	<script>
+		var btn=document.getElementById("foo");
+		var eventListioner={
+			message:"hello world",
+			handleEvent:function (e){
+				alert(this.message);
+			}
+		}
+		btn.addEventListener('click',eventListioner,false);
+	</script>
 
 
 
