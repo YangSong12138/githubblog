@@ -110,11 +110,19 @@ DOM基础
 
 事件处理的方式包括事件处理程序和事件监听器，区别在于对于一个元素或事件只能设定一个事件处理程序，但可以设定多个事件监听器。
 
-指定为HTML的属性（事件处理程序）
+事件的传播分三个阶段：
+
+捕获阶段：
+
+目标阶段：
+
+时间冒泡阶段：
+
+1. 指定为HTML的属性（事件处理程序）
 
 	<a id='foo' href="http://www.baidu.com" onclick="return stop()">HTML属性</a>
 
-指定为DOM元素的属性（事件处理程序）
+2. 指定为DOM元素的属性（事件处理程序）
 
 	<script>
 		var btn=document.getElementById("foo");
@@ -124,7 +132,7 @@ DOM基础
 		btn.onclick=sayFoo;
 	</script>
 
-通过EventTarget.addEventListener()进行制定（时间监听）
+3. 通过EventTarget.addEventListener()进行制定（事件监听）
 
 	<script>
 		var btn=document.getElementById("foo");
@@ -155,7 +163,13 @@ DOM基础
 		btn.addEventListener('click',eventListioner,false);
 	</script>
 
+注意this
+--------
 
+	document.getElementById("foo").onclick=function (){this.###};
+	lib.handleclick=function (e){this.###};
+	document.getElementById("foo")=lib.handleclick;
+	document.getElementById("foo")=function(e){lib.handleclick(e)};
 
 {% include references.md %}
 {% include pictures.md %}
