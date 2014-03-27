@@ -94,7 +94,8 @@ DOM基础
 		var barelem=document.getElementById("bar");
 		barelem.innerHTML="<div>xixi</div>"
 		barelem.textContent="<div>xixi</div>";//Level 3 core
-		//DocumentFragment 提高操作性能,每次操作是内容发生变化，浏览器要重新绘制画面。使用它可以预处理，减少绘画次数。
+		//DocumentFragment 提高操作性能,每次操作是内容发生变化，浏览器要重新绘制画面。
+		使用它可以预处理，减少绘画次数。
 		var fragment=document.createDocumentFragment();
 		var fragmentSpan=document.createElement('span');
 		fragmentSpan.appendChild(document.createTextNode("t"));
@@ -105,7 +106,6 @@ DOM基础
 		//fragmentSpan.innerHTML("xixi");//这种做法是错误的
 		fragment.appendChild(fragmentSpan);
 		foo.appendChild(fragment);
-
 	</script>
 
 
