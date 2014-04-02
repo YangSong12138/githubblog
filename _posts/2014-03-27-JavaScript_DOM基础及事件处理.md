@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JavaScript_DOM基础及事件处理
-tags: github pages,jekyll,problem
+tags: JavaScript DOM event
 ---
 
 {{ page.title }}
