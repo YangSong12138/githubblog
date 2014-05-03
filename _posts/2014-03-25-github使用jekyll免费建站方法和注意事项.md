@@ -73,7 +73,7 @@ jekyll目录结构
 	</tr>
 	<tr>
 		<td style="border:#000000 solid;border-width:1 0 1 1">includes</td>
-		<td style="border:#000000 solid;border-width:1 0 1 1">加载包含部分到你的布局或者文章中以方便重用。可以通过{% include file.ext %} 来引用。
+		<td style="border:#000000 solid;border-width:1 0 1 1">加载包含部分到你的布局或者文章中以方便重用。可以通过"{% include file.ext %}" 来引用。
 </td>
 	</tr>
 	<tr>
