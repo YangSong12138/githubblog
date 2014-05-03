@@ -49,7 +49,7 @@ hashcode()相等，equals()可能相等，也可能不等。
 答案：hashCode()方法返回的值不是由对象的地址以某种方式转换来的吗？既然是两个对象，地址应该不一样，为什么str1，str2调用hashCode()方法后值是相同的？
 
 
-一句话的简单解释：String 类重写了hashCode（）方法，所以equals返回true的时候，HashCode的返回值就相等
+一句话的简单解释：String类重写了hashCode()方法，所以equals返回true的时候，HashCode的返回值就相等
 
 只是Object类的hashCode方法才是返回对象的地址了
 
