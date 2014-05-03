@@ -1,7 +1,7 @@
 ---
 layout: post
-title: hashcode是什么东东？
-tags: java
+title: History API——页面历史
+tags: HTML5
 ---
 
 {{ page.title }}
