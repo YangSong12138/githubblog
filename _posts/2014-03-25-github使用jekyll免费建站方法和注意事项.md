@@ -95,9 +95,15 @@ jekyll目录结构
 
 搭建前你必须要有github账户以及电脑中安装git。
 
-进入Git Bash，创建博客主目录：mkdir githubblog，进入目录：cd githubblog，git初始化：git init，创建没有父节点的分支gh-pages（github 规定，只有该分支中的页面，才会生成网页文件）：git checkout --orphan gh-pages
+进入Git Bash，创建博客主目录：mkdir githubblog，进入目录：cd githubblog，git初始化：git init，创建没有父节点的分支gh-pages（github规定，只有该分支中的页面，才会生成网页文件）：git checkout --orphan gh-pages
 
+其余的关于搭建过程的详细内容可以参照下面的第一个链接，里面很详细。
 
+创建完毕后，每次进行增删改查博客的操作时执行的流程如下：
+
+	git add .
+	git commit .(把对应的#去掉，linux的vim操作)
+	git push orginal gh-pages
 
 
 #### 一些网址：
