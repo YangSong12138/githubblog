@@ -68,20 +68,20 @@ jekyll目录结构
 		<td style="border:#000000 solid;border-width:1 0 1 1">博客的主页。</td>
 	</tr>
 	<tr>
-		<td style="border:#000000 solid;border-width:1 0 1 1">_config.yml</td>
+		<td style="border:#000000 solid;border-width:1 0 1 1">config.yml</td>
 		<td style="border:#000000 solid;border-width:1 0 1 1">保存配置数据。</td>
 	</tr>
 	<tr>
-		<td style="border:#000000 solid;border-width:1 0 1 1">_includes</td>
+		<td style="border:#000000 solid;border-width:1 0 1 1">includes</td>
 		<td style="border:#000000 solid;border-width:1 0 1 1">加载包含部分到你的布局或者文章中以方便重用。可以通过{% include file.ext %} 来引用。
 </td>
 	</tr>
 	<tr>
-		<td style="border:#000000 solid;border-width:1 0 1 1">_layouts</td>
+		<td style="border:#000000 solid;border-width:1 0 1 1">layouts</td>
 		<td style="border:#000000 solid;border-width:1 0 1 1">包裹在文章外部的模板。</td>
 	</tr>
 	<tr>
-		<td style="border:#000000 solid;border-width:1 0 1 1">_posts</td>
+		<td style="border:#000000 solid;border-width:1 0 1 1">posts</td>
 		<td style="border:#000000 solid;border-width:1 0 1 1">放文章的地方。文件格式: YEAR-MONTH-DAY-title.MARKUP。</td>
 	</tr>
 	<tr>
