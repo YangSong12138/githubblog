@@ -64,10 +64,26 @@ jekyll目录结构
 		<th>描述</th>
 	</tr>
 	<tr>
-		<td style="border:#000000 solid;border-width:1 0 0 1">Other Files/Folders</td>
-		<td style="border:#000000 solid;border-width:1 0 0 1">其他一些未被提及的目录和文件如  css 还有 images 文件夹， favicon.ico 等文件都将被完全拷贝到生成的 site 中。</td>
+		<td style="border:#000000 solid;border-width:1 0 1 1">Other Files/Folders</td>
+		<td style="border:#000000 solid;border-width:1 0 1 1">其他一些未被提及的目录和文件如  css 还有 images 文件夹， favicon.ico 等文件都将被完全拷贝到生成的 site 中。</td>
 	</tr>
 </table>
+
+
+_config.yml
+保存配置数据。
+_includes
+加载包含部分到你的布局或者文章中以方便重用。可以通过{% include file.ext %} 来引用。
+_layouts
+包裹在文章外部的模板。
+_posts
+放文章的地方。文件格式: YEAR-MONTH-DAY-title.MARKUP。
+_site
+一旦 Jekyll 完成转换，就会将生成的页面放在这里（默认）。
+index.html
+博客的主页。
+Other Files/Folders
+其他一些未被提及的目录和文件如 js css 还有 images 文件夹。
 
 #### 一些网址：
 	
