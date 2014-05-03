@@ -70,20 +70,7 @@ jekyll目录结构
 </table>
 
 
-_config.yml
-保存配置数据。
-_includes
-加载包含部分到你的布局或者文章中以方便重用。可以通过{% include file.ext %} 来引用。
-_layouts
-包裹在文章外部的模板。
-_posts
-放文章的地方。文件格式: YEAR-MONTH-DAY-title.MARKUP。
-_site
-一旦 Jekyll 完成转换，就会将生成的页面放在这里（默认）。
-index.html
-博客的主页。
-Other Files/Folders
-其他一些未被提及的目录和文件如 js css 还有 images 文件夹。
+
 
 #### 一些网址：
 	
