@@ -64,12 +64,31 @@ jekyll目录结构
 		<th>描述</th>
 	</tr>
 	<tr>
+		<td style="border:#000000 solid;border-width:1 0 1 1">index.html</td>
+		<td style="border:#000000 solid;border-width:1 0 1 1">博客的主页。</td>
+	</tr>
+	<tr>
+		<td style="border:#000000 solid;border-width:1 0 1 1">_config.yml</td>
+		<td style="border:#000000 solid;border-width:1 0 1 1">保存配置数据。</td>
+	</tr>
+	<tr>
+		<td style="border:#000000 solid;border-width:1 0 1 1">_includes</td>
+		<td style="border:#000000 solid;border-width:1 0 1 1">加载包含部分到你的布局或者文章中以方便重用。可以通过{% include file.ext %} 来引用。
+</td>
+	</tr>
+	<tr>
+		<td style="border:#000000 solid;border-width:1 0 1 1">_layouts</td>
+		<td style="border:#000000 solid;border-width:1 0 1 1">包裹在文章外部的模板。</td>
+	</tr>
+	<tr>
+		<td style="border:#000000 solid;border-width:1 0 1 1">_posts</td>
+		<td style="border:#000000 solid;border-width:1 0 1 1">放文章的地方。文件格式: YEAR-MONTH-DAY-title.MARKUP。</td>
+	</tr>
+	<tr>
 		<td style="border:#000000 solid;border-width:1 0 1 1">Other Files/Folders</td>
-		<td style="border:#000000 solid;border-width:1 0 1 1">其他一些未被提及的目录和文件如  css 还有 images 文件夹， favicon.ico 等文件都将被完全拷贝到生成的 site 中。</td>
+		<td style="border:#000000 solid;border-width:1 0 1 1">其他一些未被提及的目录和文件如 js css 还有 images 文件夹。</td>
 	</tr>
 </table>
-
-
 
 
 #### 一些网址：
