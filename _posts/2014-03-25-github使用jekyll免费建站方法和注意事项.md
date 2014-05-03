@@ -73,7 +73,7 @@ jekyll目录结构
 	</tr>
 	<tr>
 		<td style="border:#000000 solid;border-width:1 0 1 1">includes</td>
-		<td style="border:#000000 solid;border-width:1 0 1 1">加载包含部分到你的布局或者文章中以方便重用。可以通过"{% include file.ext %}" 来引用。
+		<td style="border:#000000 solid;border-width:1 0 1 1">加载包含部分到你的布局或者文章中以方便重用。
 </td>
 	</tr>
 	<tr>
@@ -89,6 +89,15 @@ jekyll目录结构
 		<td style="border:#000000 solid;border-width:1 0 1 1">其他一些未被提及的目录和文件如 js css 还有 images 文件夹。</td>
 	</tr>
 </table>
+
+搭建过程
+--------
+
+搭建前你必须要有github账户以及电脑中安装git。
+
+进入Git Bash，创建博客主目录：mkdir githubblog，进入目录：cd githubblog，git初始化：git init，创建没有父节点的分支gh-pages（github 规定，只有该分支中的页面，才会生成网页文件）：git checkout --orphan gh-pages
+
+
 
 
 #### 一些网址：
