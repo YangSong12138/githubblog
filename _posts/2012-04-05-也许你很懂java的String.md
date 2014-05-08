@@ -1,68 +1,37 @@
 ---
 layout: post
-title: java之运算符与表达式
+title: java之String的秘密
 tags: java
 ---
 
 {{ page.title }}
 ================
 
-编译器对运算符的原理
---------------------
-
-编译器是贪婪的。结合尽可能多的运算符。
-例子:i+++j->(i++)+j
-
-i++,++i的原理
--------------
-
-	i=i++;
-	//原理
-	i+=1;
-	i=i;
-
-	i=++i;
-	//原理
-	temp=i;
-	i+=1;
-	i=temp;
-
-0可以做除数吗？
+众所周知的秘密
 --------------
 
-答案是可以的，整形是不可以的，浮点型是可以的，结果是0.0,-0.0,-infinity,infinity,NaN
+String对象是不可修改的。你对他进行的任何修改字符序列的操作其实都是返回修建的String对象，所以它具有线程安全性，可以自由的实现共享。
 
-操作符与操作数的关键点
+String字面常量和常量池
 ----------------------
 
-在java中操作数是从左向右的计算规则，而且与运算符的结合性无关，就算运算符是由右向左结合的，也会在运算之前先确认左侧的操作数。
+java通过String常量池共享String对象。
 
-	public class order{
-		int a[]=new int[]{0,0,0,0,0};
-		int i=1;
-		a[++i]=i++;
-		System.out.println(i+" "+Arrays.toString(a));//3 [0,0,2,0,0,0]
-		int j=3;
-		a[j]=j=4;
-		System.out.println(j+" "+Arrays.toString(a));//4 [0,0,2,4,0,0]
-		int b[]=new int[]{9,9,9,9,9,9};
-		int k=5;
-		int c[]=a;
-		a[--k]=(a=b)[k];
-		System.out.println(k+" "+Arrays.toString(a)+" "+Arrays.toString(b)+" "+Arrays.toString(c));
-		//4 [0,0,2,4,9,0] [9,9,9,9,9,9] [9,9,9,9,9,9]
-		int q=1;
-		b[q]*=q=2;
-		System.out.println(q+" "+Arrays.toString(b));//2 [9,18,9,9,9,9]
-	}
+当String对象是编译时常量(String字面常量和String表达式)，就会去常量池中寻找相等的对象。否则，会在运行时创建String对象，并分配到堆里。
+
+equals与==
+----------
+
+默认情况下，他们两个是完全等价的，比较的是对象的地址，因为调用他的对象大部分继承自Object类，不过你可以重写equals方法，String类的equals方法就是重写过，比较的对象内容。需要牢记的是重写equals()方法时，一定要重写hashcode()方法
 
 
-交换两个变量值的方法
---------------------
 
-1.通过第三个变量；(temp=x;x=y;y=temp;)
-2.通过相加的方式；(x=x+y;y=x-y;x=x-y;)
-3.通过异或的方式。(x=x^y;y=x^y;x=x^y;)
+运算符‘+’的秘密
+---------------
+
+当使用运算符‘+’连接字符串的时候，实际上是使用临时创建的StringBuilder对象来辅助完成的。因此，循环操作进行String对象连接操作时，应该直接使用StringBuilder。
+
+但也有例外，但‘+’连接的两个操作数都是编译时常量时，则会在编译时计算字符串的值，就不会再到运行时创建的StringBuilder对象。
 
 注意事项
 --------
