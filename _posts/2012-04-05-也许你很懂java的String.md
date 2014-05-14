@@ -38,5 +38,7 @@ equals与==
 
 方法中形参的改变无法作用于实参，但可以通过引用来修改其成员变量来修改其值。
 
+重写equals方法的同时，一定要记得重写hashcode方法，例如，你修改了equals，然后map.get(sth)，一样的sth但还是得到空的结果，是因为要先比较hashcode，hashcode不一样所以就为null。
+
 {% include references.md %}
 {% include pictures.md %}
