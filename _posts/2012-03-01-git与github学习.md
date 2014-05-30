@@ -7,6 +7,27 @@ tags: github,git
 {{ page.title }}
 ================
 
+# ***在此处输入标题***
+
+标签（空格分隔）： 未分类
+
+---sdfsdfsdfsd
+
+    fsdfsaf
+    dfaf
+    sfsaf
+    python
+    sfasf
+    [baidu][1]
+
+在此输入正文
+
+
+  [1]: www.baidu.com
+
+
+
+
 何种文档需要git
 ---------------
 
