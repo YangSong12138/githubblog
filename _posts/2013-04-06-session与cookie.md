@@ -65,6 +65,7 @@ session在下列情况下被删除：1．程序调用HttpSession.invalidate()；
 
 很全的session与cookie区别：<http://blog.csdn.net/macsnow/article/details/6893191>
 session与cookie:<http://www.chinahtml.com/1007/128010707619425.html>
+cookie:<http://blog.csdn.net/ghsau/article/details/20395681>
 
 
 {% include references.md %}
