@@ -47,4 +47,27 @@ Spring MVC和Struts2的区别：
 > (2)客户端和服务器之间，传递这种资源的某种表现层；
 > (3)客户端通过四个HTTP动词，对服务器端资源进行操作，实现"表现层状态转化"。
 
+
+<div class="row">
+<div class="span4">
+<table class="table table-bordered table-striped table-condensed">
+   <tbody><tr>
+      <td>John</td>
+      <td>Smith</td>
+      <td>123 Main St.</td>
+   </tr>
+   <tr>
+      <td>Mary</td>
+      <td>Jones</td>
+      <td>456 Pine St.</td>
+   </tr>
+   <tr>
+      <td>Jim</td>
+      <td>Baker</td>
+      <td>789 Park Ave.</td>
+   </tr>
+</tbody></table> 
+</div>
+</div>
+
 阮一峰理解RESTful架构:<http://www.ruanyifeng.com/blog/2011/09/restful.html>
